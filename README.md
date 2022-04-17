@@ -6,10 +6,10 @@ A Udemy course for beginners learning how to analyze data quickly and easily wit
 
 # Creating Conda Environment, Installing Pandas and Jupyter
 1. Open a terminal and run the following commands:
-   a. Update Conda --> conda update conda
-   b. Create a new Conda Environment --> conda create --name <name>
-   c. Activate your new Conda Environment --> conda activate <name>
-   d. Install pandas, numexpr, and bottleneck --> conda install <library name>
+2. Update Conda --> conda update conda
+3. Create a new Conda Environment --> conda create --name <name>
+4. Activate your new Conda Environment --> conda activate <name>
+5. Install pandas, numexpr, and bottleneck --> conda install <library name>
 
 # Sequence of Starting/Stopping Jupyter Notebooks
 1. Run --> jupyter notebook <-- to start up Jupyter.
