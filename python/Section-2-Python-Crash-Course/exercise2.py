@@ -1,17 +1,22 @@
-# Coding Exercise 2: Custom Functions
+# Invoke the len function and pass it the string "Bobby"
+# Assign the return value to a variable of name_length.
+name_length = len("Bobby")
 
-# Define an easy_money function that accepts no parameters and always returns the value 100
-def easy_money():
-	return 100
-	
-# Define a best_food_ever function that accepts no parameters and always returns
-# the string "Sushi"
-def best_food_ever():
-	return "Sushi"
-	
-# Define a convert_to_currency function that accepts a single parameter (an integer)
-# The function should convert the argument to a string, prefix it with a dollar sign, and
-# return the results.
-def convert_to_currency(currency):
-	string = "$" + str(currency)
-	return string
+# Invoke the len function and pass it the string "Hollywood"
+# Assign the return value to a variable of city_length.
+city_length = len("Hollywood")
+
+# Invoke the int function and pass it the string "31"
+# Assign the return value to a variable of age_as_number.
+age_as_number = int("31")
+
+# Invoke the str function and pass it the number 31.
+# Assign the return value to a variable of age_as_string.
+age_as_string = str(31)
+
+# CHALLENGE 
+# Invoke the str function and pass it the number 99.
+# The str function will return a string. Concatenate " problems" to the end of that string.
+# Assign the final value to an "issues" variable.
+# Thus, your "issues" variable should have a final value of "99 problems"
+issues = str(99) + " problems"
