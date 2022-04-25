@@ -1,28 +1,23 @@
-###############################################################
-# DO NOT DELETE THIS CODE. IT IS NEEDED FOR THE TESTS TO RUN. #
-from ignore import pd                                         #
-###############################################################
+# If you see a test failure when checking your solution,
+# note that [left] refers to YOUR code while [right]
+# refers to the correct code that the computer is comparing
+# to your work
+import pandas as pd
 
-# Let's say I have a dictionary that maps guitar types
-# to their colors
-guitars_dict = {
-    "Fender Telecaster": "Baby Blue",
-    "Gibson Les Paul": "Sunburst",
-    "ESP Eclipse": "Dark Green"
-}
+# We have a roller_coasters.csv CSV file with 4 columns: Name, Park, Country, and Height.
+# You can explore the data by clicking into the CSV file on the left
+# Import the CSV file into a pandas Series object
+# The Series should have the standard pandas numeric index
+# The Series values should be the string values from the "Name" column
+# Assign the Series object to a "coasters" variable
+coasters = pd.read_csv("roller_coasters.csv", usecols = ["Name"], squeeze = True)
 
-# Create a new Series object, passing in the guitars_dict dictionary as the data source.
-# Assign the resulting Series to a "guitars" variable.
-guitars = pd.Series(guitars_dict)
+# I only want to ride the top 3 roller coasters on the list.
+# Starting with the "coasters" Series, extract the first 3 rows in a new Series.
+# Assign the new Series to a "top_three" variable.
+top_three = coasters.head(3)
 
-# Access the value for the index position of 0 within the "guitars" Series.
-# Assign the value to a "fender_color" variable.
-fender_color = guitars[0]
-
-# Access the value for the index label of "Gibson Les Paul" in the "guitars" Series.
-# Assign the value to a "gibson_color" variable.
-gibson_color = guitars["Gibson Les Paul"]
-
-# Access the value for the index label of "ESP Eclipse" in the "guitars" Series.
-# Assign the value to a "esp_color" variable.
-esp_color = guitars["ESP Eclipse"]
+# I'm now curious about some of the last entries on the coaster list.
+# Starting with the "coasters" Series, extract the last 4 rows in a new Series.
+# Assign the new Series to a "bottom_four" variable.
+bottom_four = coasters.tail(4)

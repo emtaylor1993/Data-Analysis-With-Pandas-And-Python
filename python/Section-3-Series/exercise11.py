@@ -1,40 +1,24 @@
 ###############################################################
 # DO NOT DELETE THIS CODE. IT IS NEEDED FOR THE TESTS TO RUN. #
-from ignore import pd                                         #
+from unittest.mock import MagicMock                           #
+import pandas as pd                                           #
+pd.read_csv = MagicMock(spec = pd.read_csv)                   #
 ###############################################################
 
-# Assume pandas has already been imported and assigned to the alias "pd".
+# Assume the pandas library has already been imported and assigned
+# the alias "pd"
 
-flavors = ["Spicy Sweet Chili", "Cool Ranch", "Nacho Cheese", "Salsa Verde"]
-
-# Create a new Series object, passing in the flavors list defined above
-# Assign it to a 'doritos' variable. The resulting Series should look like this:
+# Let's say we have a foods.csv CSV file with 3 columns: Item Number,
+# Menu Item, Price. The raw CSV data looks like this: 
 #
-#   0    Spicy Sweet Chili
-#   1           Cool Ranch
-#   2         Nacho Cheese
-#   3          Salsa Verde
-#   dtype: object
-doritos = pd.Series(flavors)
-
-# Below, sort the doritos Series in descending order.
-# Make sure the operation is permanent.
-# The Series should like this afterwards:
+# Item Number,Menu Item,Price
+# 1,Big Mac,4.99
+# 2,McNuggets,7.99
+# 3,Quarter Pounder,3.99
 #
-#   0    Spicy Sweet Chili
-#   3          Salsa Verde
-#   2         Nacho Cheese
-#   1           Cool Ranch
-#   dtype: object
-doritos.sort_values(ascending = False, inplace = True)
+# Import the CSV file into a Pandas Series object. The Series should
+# have the standard Pandas numerbc index. The Series values should be
+# the string values from the "Menu Item" column. Assign the Series to
+# a "foods" variable.
 
-# Below, sort the doritos Series index in descending order.
-# Make sure the operation is permanent.
-# The Series should like this afterwards:
-#
-#   3          Salsa Verde
-#   2         Nacho Cheese
-#   1           Cool Ranch
-#   0    Spicy Sweet Chili
-#   dtype: object
-doritos.sort_index(ascending = False, inplace = True)
+foods = pd.read_csv("foods.csv", usecols = ["Menu Item"]).squeeze()
