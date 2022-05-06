@@ -1,37 +1,28 @@
 ###############################################################
 # DO NOT DELETE THIS CODE. IT IS NEEDED FOR THE TESTS TO RUN. #
-
-from unittest.mock import MagicMock
-import pandas as pd
-pd.Series = MagicMock()
-
+from ignore import pd                                         #
 ###############################################################
 
-# Assume the pandas library has already been imported and assigned
-# the alias "pd"
-
-# Create a list with 4 countries - United States, France, Germany,
-# Italy. Create a new Series by passing in the list of coutnries
-# Assign the Series to a "countries" variable
-
-country_list = ['United States', 'France', 'Germany', 'Italy']
-countries = pd.Series(country_list)
-
-# Create a list with 3 colors - red, green, blue. Create a new
-# Series by passing in the list of colors. Assign the Series to a
-# "colors" variable.
-
-color_list = ['red', 'green', 'blue']
-colors = pd.Series(color_list)
-
-# Given the "recipe" dictionary below, create a new Series by passing
-# in the dictionary as the data source. Assign the resulting series
-# to a "series_dict" variable
-
-recipe = {
-	"Flour" : True,
-	"Sugar" : True,
-	"Salt" : False
+# Let's say I have a dictionary that maps guitar types
+# to their colors
+guitars_dict = {
+    "Fender Telecaster": "Baby Blue",
+    "Gibson Les Paul": "Sunburst",
+    "ESP Eclipse": "Dark Green"
 }
 
-series_dict = pd.Series(recipe)
+# Create a new Series object, passing in the guitars_dict dictionary as the data source.
+# Assign the resulting Series to a "guitars" variable.
+guitars = pd.Series(guitars_dict)
+
+# Access the value for the index position of 0 within the "guitars" Series.
+# Assign the value to a "fender_color" variable.
+fender_color = guitars[0]
+
+# Access the value for the index label of "Gibson Les Paul" in the "guitars" Series.
+# Assign the value to a "gibson_color" variable.
+gibson_color = guitars["Gibson Les Paul"]
+
+# Access the value for the index label of "ESP Eclipse" in the "guitars" Series.
+# Assign the value to a "esp_color" variable.
+esp_color = guitars["ESP Eclipse"]
